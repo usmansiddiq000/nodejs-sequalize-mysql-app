@@ -25,16 +25,21 @@ Open [http://localhost:3000/users/add-user]
 ```npm install -g sequelize-cli```
 
 ```sequelize init```
+
 It will initialize folder for models, config, etc
 
 ```sequelize model:create --name User --attributes name:string```
+
 This command will create models "Users" with attributes name, updatedAt, createdAt, id
 
 ```sequelize db:migrate```
+
 migrating models 
 
 ```sequelize migration:create --name User```
+
 Create migration (Adding column etc) e.g..
+
 ```
 up: async (queryInterface, Sequelize) => {
     return Promise.all([
@@ -56,6 +61,7 @@ up: async (queryInterface, Sequelize) => {
   }
 ````
 then
+
 ```sequelize db:migrate```
 
 To undo migration most recent migration
