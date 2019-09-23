@@ -9,33 +9,33 @@ git clone https://github.com/usmansiddiq000/nodejs-sequalize-mysql-app.git
 
 In the project directory, you can run:
 
-### `npm install`
+```npm install```
 
 
 
-### `npm start`
+```npm start```
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000/users/add-user]
 
 ## Integrating Sequalize with express(node) steps for mysqli database
 
-`npm install --save sequelize mysql2` 
+```npm install --save sequelize mysql2``` 
 
-`npm install -g sequelize-cli` 
+```npm install -g sequelize-cli```
 
-`sequelize init`
+```sequelize init```
 It will initialize folder for models, config, etc
 
-`sequelize model:create --name User --attributes name:string`
+```sequelize model:create --name User --attributes name:string```
 This command will create models "Users" with attributes name, updatedAt, createdAt, id
 
-`sequelize db:migrate`
+```sequelize db:migrate```
 migrating models 
 
-`sequelize migration:create --name User`
+```sequelize migration:create --name User```
 Create migration (Adding column etc) e.g..
-`
+```
 up: async (queryInterface, Sequelize) => {
     return Promise.all([
       queryInterface.addColumn(
@@ -54,11 +54,11 @@ up: async (queryInterface, Sequelize) => {
       )
     ]);
   }
-`
+````
 then
-`sequelize db:migrate`
+```sequelize db:migrate```
 
 To undo migration most recent migration
 
-'sequelize db:migrate:undo`
+```sequelize db:migrate:undo```
 
