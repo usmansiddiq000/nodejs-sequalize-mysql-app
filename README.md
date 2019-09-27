@@ -68,3 +68,7 @@ To undo migration most recent migration
 
 ```sequelize db:migrate:undo```
 
+To run procedure (test is db name)
+
+```mysql -u 'root' -p test < sql_scripts/userProcedure.sql(Path to .sql file)  ```
+
