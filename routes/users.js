@@ -4,7 +4,22 @@ var db = require('../models');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  // db.sequelize.query('call getUsers()')
+  // .then(user => {
+  //   console.log(user)
+  // })
+  // .catch(error => {
+  //   console.log(error)
+  // })
+
+  db.sequelize.query(`call getUsersWithInput(${1})`)
+  .then(user => {
+    console.log(user[0].id)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+  res.send('This is user page ')
 });
 
 router.get('/add-user', function(req, res, next) {
